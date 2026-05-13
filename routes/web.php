@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\ToDoController;
+use App\Http\Controllers\DiaryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,3 +26,7 @@ Route::get('/information', function () {
 Route::get('/calendar', function () {
     return view('why');
 });
+
+Route::get('/todos', [ToDoController::class, 'index']);
+
+Route::get('/diaries', [DiaryController::class, 'index']);
